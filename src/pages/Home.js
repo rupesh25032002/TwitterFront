@@ -17,7 +17,7 @@ export const Home = () => {
     const submitTweet = async (e) =>{
         e.preventDefault(); 
         try {
-            const res = await axios.post("/api/tweet/",{
+            const res = await axios.post(`${process.env.apiUrl}/api/tweet/`,{
                 userId:`${userDetail?._id}`,
                 description:`${tweetContent}`
             })

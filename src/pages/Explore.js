@@ -18,7 +18,7 @@ export const Explore = () => {
   const handleExploreTweet = async() =>{
     setIsLoading(true)
     try {
-      const res = await axios.post("/api/tweet/explore");
+      const res = await axios.post(`${process.env.apiUrl}/api/tweet/explore`);
       console.log(res)
       dispatch(setExploreTweets(res?.data?.exploreTweets))
       setIsLoading(false)

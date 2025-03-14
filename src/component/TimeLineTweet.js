@@ -16,7 +16,7 @@ const fetchTimeLineTweet = async () =>{
     setIsLoading(true)
     console.log(userData?.token)
     try {
-        const res = await axios.post(`/api/tweet/timeline/${userData?.user?._id}`,
+        const res = await axios.post(`${process.env.apiUrl}/api/tweet/timeline/${userData?.user?._id}`,
         {},
         {
             headers: {

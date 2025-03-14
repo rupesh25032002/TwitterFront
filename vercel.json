@@ -1,8 +1,0 @@
-{
-    "redirects": [
-        {
-            "source": "/api/*",
-            "destination": "https://twitterback-u70s.onrender.com/api/*"
-        }
-    ]
-}

@@ -15,7 +15,7 @@ const TweetReply = ({
   //handle Tweet Reply
   const handleTweetReply = async () => {
     try {
-      const res = await axios.post(`/api/tweet/${userId}/replyTweet`, {
+      const res = await axios.post(`${process.env.apiUrl}/api/tweet/${userId}/replyTweet`, {
         userId: `${JSON.parse(localStorage.getItem("userdata"))?.user?._id}`,
         tweetReplyContent: tweetReplyContent,
       });

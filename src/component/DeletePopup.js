@@ -9,7 +9,7 @@ const DeletePopup = ({ handleCloseBtn, _id, fetchTimeLineTweet, userId }) => {
   const handleTweetDelete = async () => {
     console.log("clcik");
     try {
-      await axios.delete(`/api/tweet/delete/${_id}`, {
+      await axios.delete(`${process.env.apiUrl}/api/tweet/delete/${_id}`, {
         data: {
           userId,
         },
