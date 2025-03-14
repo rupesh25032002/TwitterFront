@@ -13,11 +13,12 @@ export const Home = () => {
     const timelineTweets = useSelector((state)=>state?.tweets?.timeLineTweet);
     const [tweetContent,setTweetContent] = useState("");
     const dispatch = useDispatch();
+    console.log(process.env.REACT_APP_APIURL)
     //Create tweet
     const submitTweet = async (e) =>{
         e.preventDefault(); 
         try {
-            const res = await axios.post(`${process.env.apiUrl}/api/tweet/`,{
+            const res = await axios.post(`${process.env.REACT_APP_APIURL}/api/tweet/`,{
                 userId:`${userDetail?._id}`,
                 description:`${tweetContent}`
             })

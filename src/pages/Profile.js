@@ -28,7 +28,7 @@ export const Profile = () => {
   //get user Detail
   const getCurrentUserData = async () => {
     try {
-      const res = await axios.get(`${process.env.apiUrl}/api/user/getuser/${userId?.id}`);
+      const res = await axios.get(`${process.env.REACT_APP_APIURL}/api/user/getuser/${userId?.id}`);
       setCurrentUserDetail(res?.data?.user);
     } catch (error) {
       console.log(error);
@@ -38,7 +38,7 @@ export const Profile = () => {
   //get user tweets
   const getUserTweets = async () => {
     try {
-      const res = await axios.post(`${process.env.apiUrl}/api/tweet/user/all/${userId?.id}`);
+      const res = await axios.post(`${process.env.REACT_APP_APIURL}/api/tweet/user/all/${userId?.id}`);
       console.log(res);
       setUserTweets([...res?.data?.userTweets]);
     } catch (error) {
@@ -51,7 +51,7 @@ export const Profile = () => {
     try {
       if (!isFollow) {
         const res = await axios.post(
-          `${process.env.apiUrl}/api/user/follow/${currentUserDetail?._id}`,
+          `${process.env.REACT_APP_APIURL}/api/user/follow/${currentUserDetail?._id}`,
           {
             userId: `${userDetail?._id}`,
           }
@@ -59,7 +59,7 @@ export const Profile = () => {
         setIsFollow(true);
       } else {
         const res = await axios.post(
-          `${process.env.apiUrl}/api/user/unfollow/${currentUserDetail?._id}`,
+          `${process.env.REACT_APP_APIURL}/api/user/unfollow/${currentUserDetail?._id}`,
           {
             userId: `${userDetail?._id}`,
           }
@@ -84,7 +84,7 @@ export const Profile = () => {
     e.preventDefault();
     try {
       const res = await axios.put(
-        `${process.env.apiUrl}/api/user/update/${currentUserDetail?._id}`,
+        `${process.env.REACT_APP_APIURL}/api/user/update/${currentUserDetail?._id}`,
         {
           ...updateDetail,
         }

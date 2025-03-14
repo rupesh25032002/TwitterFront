@@ -34,7 +34,7 @@ const Register = () => {
     e.preventDefault();
     try {
       if (formValidation()) {
-        const res = await axios.post(`${process.env.apiUrl}/api/auth/register`, {
+        const res = await axios.post(`${process.env.REACT_APP_APIURL}/api/auth/register`, {
           name,
           username,
           description,

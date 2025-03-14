@@ -10,7 +10,7 @@ const TweetReplyBox = ({userId,reply}) => {
     //get User Detail
     const getUserDetail = async () => {
       try {
-        const res = await axios.get(`${process.env.apiUrl}/api/user/getuser/${userId}`);
+        const res = await axios.get(`${process.env.REACT_APP_APIURL}/api/user/getuser/${userId}`);
         setUserDetail(res?.data?.user);
       } catch (error) {
         console.log(error);

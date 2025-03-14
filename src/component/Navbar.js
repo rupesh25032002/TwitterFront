@@ -12,7 +12,7 @@ const dispatch = useDispatch();
 const navigate = useNavigate();
 const handleSearch = async() =>{
   try {
-    const res = await axios.post(`${process.env.apiUrl}/api/user/getalluser`,{
+    const res = await axios.post(`${process.env.REACT_APP_APIURL}/api/user/getalluser`,{
         searchedData
     })
     console.log(res)

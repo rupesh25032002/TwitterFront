@@ -17,12 +17,13 @@ const Login = () => {
   const {user,token}=useSelector((state)=>state.user)
   const dispatch=useDispatch()
   const navigate=useNavigate()
-
+  
   //onsubmit function
   const handleSubmit=async(e)=>{
-  e.preventDefault();
+    e.preventDefault();
+    console.log(process.env.REACT_APP_APIURL)
   try{
-     const res = await axios.post(`${process.env.apiUrl}/api/auth/login`,{
+     const res = await axios.post(`${process.env.REACT_APP_APIURL || "http"}/api/auth/login`,{
       email,password
      })
      console.log(res)

@@ -24,7 +24,7 @@ export const Tweet = ({ props, fetchTimeLineTweet }) => {
   //get User Detail
   const getUserDetail = async () => {
     try {
-      const res = await axios.get(`${process.env.apiUrl}/api/user/getuser/${userId}`);
+      const res = await axios.get(`${process.env.REACT_APP_APIURL}/api/user/getuser/${userId}`);
       setUserDetail(res?.data?.user);
     } catch (error) {
       console.log(error);
@@ -34,7 +34,7 @@ export const Tweet = ({ props, fetchTimeLineTweet }) => {
   //handle Like Dislike
   const handleLikeDisLike = async () => {
     try {
-      const res = await axios.post(`${process.env.apiUrl}/api/tweet/${_id}/like`, {
+      const res = await axios.post(`${process.env.REACT_APP_APIURL}/api/tweet/${_id}/like`, {
         userId: `${currentUserId}`,
       });
       setTweetLikes([...res?.data?.tweet?.likes]);
